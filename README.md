@@ -56,6 +56,7 @@ https://www.youtube.com/playlist?list=PLRtjMdoYXLf7n9bghH1k63kisb-VDzGu1
         
         Moves a cc.Node object simulating a parabolic jump movement by modifying it's position attribute.
        
+         seconds,destination point, height jump, number of jumps
         //var sprite_Action = cc.JumpBy.create(2,cc.p(100,100),50,4);
         //sprite.runAction(sprite_Action);
                   
@@ -63,8 +64,8 @@ https://www.youtube.com/playlist?list=PLRtjMdoYXLf7n9bghH1k63kisb-VDzGu1
               
         An action that moves the target with a cubic Bezier curve to a destination point.
         
-        //var sprite_Action = cc.JumpBy.create(2,cc.p(100,100),50,4);
-        //sprite.runAction(sprite_Action);
+        var sprite_Action = cc.JumpBy.create(2,cc.p(100,100),50,4);
+        sprite.runAction(sprite_Action);
         
 
         *********************Tutorial 13 - BezierBy***************************************
