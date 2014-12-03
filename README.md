@@ -9,6 +9,20 @@ Tutorial Series on Cocos2d-js
 https://www.youtube.com/playlist?list=PLRtjMdoYXLf7n9bghH1k63kisb-VDzGu1
 
 
+ ********************* Mouse Event ****************************************************************************************************************************
+
+        if( cc.sys.capabilities.hasOwnProperty('mouse') ) {
+            cc.log('mouse');
+            cc.eventManager.addListener(
+                    {
+                        event: cc.EventListener.MOUSE,
+                        onMouseDown:function(event){
+                            cc.log('mouse clicked');
+                            cc.log(event);
+                        }
+                    }, this)
+        }
+
 
         ********************* Logging ***************************************************
 			Log Window size
@@ -33,74 +47,7 @@ https://www.youtube.com/playlist?list=PLRtjMdoYXLf7n9bghH1k63kisb-VDzGu1
         //var sprite_Action = cc.MoveTo.create(2,cc.p(100,100));
         //sprite.runAction(sprite_Action);
              
-        *********************Tutorial 9 - MoveBy******************************************
-        
-        Moves a CCNode object x,y pixels by modifying it's position attribute. 
-        x and y are relative to the position of the object. 
-        Several CCMoveBy actions can be concurrently called, and the resulting 
-        movement will be the sum of individual movements.
-        
-        //var sprite_Action = cc.MoveBy.create(2,cc.p(50,100));
-        //sprite.runAction(sprite_Action);
-        
-
-        *********************Tutorial 10 - JumpTo******************************************
-       
-        Moves a cc.Node object to a parabolic position simulating a jump movement by modifying it's position attribute.
-        
-        // var sprite_Action = cc.JumpTo.create(2,cc.p(100,100),50,4);
-        //sprite.runAction(sprite_Action);
-
-
-        *********************Tutorial 11 - JumpBy******************************************
-        
-        Moves a cc.Node object simulating a parabolic jump movement by modifying it's position attribute.
-       
-         seconds,destination point, height jump, number of jumps
-        //var sprite_Action = cc.JumpBy.create(2,cc.p(100,100),50,4);
-        //sprite.runAction(sprite_Action);
-                  
-        *********************Tutorial 12 - BezierTo***************************************
-              
-        An action that moves the target with a cubic Bezier curve to a destination point.
-        
-        var sprite_Action = cc.JumpBy.create(2,cc.p(100,100),50,4);
-        sprite.runAction(sprite_Action);
-        
-
-        *********************Tutorial 13 - BezierBy***************************************
-       
-        An action that moves the target with a cubic Bezier curve by a certain distance.
-
-       // var bezier =[cc.p(0,size.height/2),cc.p(100,-size.width/4),cc.p(100,100)];
-       // var sprite_Action = cc.BezierBy.create(3,bezier);
-       // sprite.runAction(sprite_Action);
-        
-        
-        
-        *********************Tutorial 14 - Place******************************************
-
-         Places the node in a certain position
-
-        // var sprite_Action = cc.Place.create(cc.p(100,100));
-        //sprite.runAction(sprite_Action);
-        
-        
-        *********************Tutorial 15 - Repeat*******************************************
-        
-		Repeats an action a number of times. To repeat an action forever use the CCRepeatForever action.
-
-       // var move_Action = cc.MoveBy.create(2,cc.p(50,100));
-       // var sprite_Action = cc.Repeat.create(move_Action,5);
-       // sprite.runAction(sprite_Action);
-
-
-
-
-
-
-
-
+    
 
 ******************************************************************
 *************************  USEFUL LINKS  *************************

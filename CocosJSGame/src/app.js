@@ -5,6 +5,19 @@ var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
 
         this._super();
+
+        if( cc.sys.capabilities.hasOwnProperty('mouse') ) {
+        	cc.log('mouse');
+        	cc.eventManager.addListener(
+        			{
+        				event: cc.EventListener.MOUSE,
+        				onMouseDown:function(event){
+        					cc.log('mouse clicked');
+        					cc.log(event);
+        				}
+        			}, this)
+        }
+       
         size = cc.winSize;
 
         // Create and place background
@@ -36,11 +49,13 @@ var HelloWorldLayer = cc.Layer.extend({
     gameLogic:function(dt) {
     	this.addMonster();
     }
+  
 });
 
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
+
         var layer = new HelloWorldLayer();
         this.addChild(layer);
     }
